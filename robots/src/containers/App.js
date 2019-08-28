@@ -1,8 +1,8 @@
 import React from 'react'
-import CardList from './CardList'
-import SearchBox from './SearchBox.js'
+import CardList from '../components/CardList.js'
+import SearchBox from '../components/SearchBox.js'
+import Scroll from '../components/Scroll.js'
 import './App.css'
-import Scroll from './Scroll.js'
 
 class App extends React.Component {
     constructor() {
@@ -13,10 +13,10 @@ class App extends React.Component {
         }
     }
 
-    componentDidMount(){
+    componentDidMount() {
         fetch('https://jsonplaceholder.typicode.com/users')
-        .then(response=> response.json())
-        .then(users=> this.setState({robots:users}));    
+            .then(response => response.json())
+            .then(users => this.setState({ robots: users }));
     }
 
     onSearchChanged = (event) => {
@@ -32,9 +32,8 @@ class App extends React.Component {
                 <h1 className='f1'>RoboFriends</h1>
                 <SearchBox searchChange={this.onSearchChanged} />
                 <Scroll>
-                <CardList robots={filterRobots} />
+                    <CardList robots={filterRobots} />
                 </Scroll>
-                
             </div>
         );
     }

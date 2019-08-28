@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App'
+import App from './containers/App.js'
+import * as serviceWorker from './serviceWorker.js';
 import './index.css';
-import * as serviceWorker from './serviceWorker';
 import 'tachyons'
 
 ReactDOM.render(<div><App /></div>, document.getElementById('root'));
